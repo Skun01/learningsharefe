@@ -1,0 +1,323 @@
+.container {
+  max-width: 64rem; /* Wider container */
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Profile Avatar Styles */
+.profileRow {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .profileRow {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+/* ... existing styles ... */
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  background-color: var(--surface-color);
+}
+
+.profileAvatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileAvatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: var(--primary-foreground);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.avatarOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.avatarWrapper:hover .avatarOverlay {
+  opacity: 1;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileName {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.profileEmail {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin: 0.25rem 0 0;
+}
+
+/* Theme Selection Styles */
+.themeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.themeCard {
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+  background-color: var(--surface-color);
+}
+
+.themeCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 2px 0px 0px var(--border-color);
+}
+
+.activeTheme {
+  border-color: var(--primary-color);
+  box-shadow: 4px 4px 0px 0px var(--primary-color);
+}
+
+.themePreview {
+  height: 3rem;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.themePreviewDot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+.themeName {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--text-main);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.03em;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.message {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+
+.error {
+  background-color: var(--error-bg);
+  color: var(--error-text);
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow-hard);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+.cardDescription {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.formRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.mb4 {
+  margin-bottom: 1rem;
+}
+
+/* Daily Goal Selector Styles */
+.goalGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .goalGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.goalCard {
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  background-color: var(--surface-color);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.goalCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+}
+
+.activeGoal {
+  border-color: var(--primary-color);
+  background-color: var(--primary-light, #ecfdf5);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Add a visual "check" indicator or thick border for active state */
+.activeGoal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--primary-color);
+  border-radius: calc(var(--radius-md) - 2px);
+  pointer-events: none;
+}
+
+.goalEmoji {
+  font-size: 2rem;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.goalCard:hover .goalEmoji {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.goalValue {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.goalLabel {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.customGoalInput {
+  margin-top: 1rem;
+}

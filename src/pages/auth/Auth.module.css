@@ -1,0 +1,118 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+  padding: 1rem;
+}
+
+.card {
+  max-width: 28rem;
+  width: 100%;
+  background-color: var(--primary-color); /* Yellow background for auth card */
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow-hard);
+  position: relative;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1.5rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Inner white card effect */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--surface-color);
+  z-index: 0;
+  border-radius: var(--radius-lg);
+  margin: 0.5rem;
+  border: var(--border-width) solid var(--border-color);
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.errorMessage {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.875rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+  border: 1px solid #b91c1c;
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.link {
+  font-weight: 700;
+  color: var(--text-main);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.link:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+.bottomText {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 1rem;
+}

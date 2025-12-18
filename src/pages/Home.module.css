@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+  line-height: 1.1;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+  max-width: 50rem;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 4.5rem;
+  }
+}
+
+.highlight {
+  color: var(--text-main);
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  left: -0.25rem;
+  right: -0.25rem;
+  bottom: 0.25rem;
+  height: 1rem;
+  background-color: var(--primary-color);
+  z-index: -1;
+  transform: rotate(-1deg);
+  border-radius: 4px;
+}
+
+.description {
+  max-width: 40rem;
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.userWelcome {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.welcomeTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.welcomeText {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.progressCard {
+  padding: 1.5rem 2rem;
+  background-color: var(--surface-color);
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow-hard);
+  border-radius: var(--radius-lg);
+  display: inline-block;
+  transform: rotate(-1deg);
+}
+
+.progressText {
+  color: var(--text-main);
+  font-weight: 800;
+  background-color: var(--primary-color);
+  padding: 0 0.25rem;
+}
