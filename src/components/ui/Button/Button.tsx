@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes } from 'react';
+import { memo, type ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
 import styles from './Button.module.css';
 
@@ -8,15 +8,17 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
 }
 
-export const Button = ({
-  children,
-  className = '',
-  variant = 'primary',
-  size = 'md',
-  isLoading = false,
-  disabled,
-  ...props
-}: ButtonProps) => {
+export const Button = memo((
+  {
+    children,
+    className = '',
+    variant = 'primary',
+    size = 'md',
+    isLoading = false,
+    disabled,
+    ...props
+  }: ButtonProps
+) => {
   return (
     <button
       className={clsx(
@@ -37,4 +39,6 @@ export const Button = ({
       {children}
     </button>
   );
-};
+});
+
+Button.displayName = 'Button';

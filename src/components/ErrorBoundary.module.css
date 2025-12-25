@@ -1,0 +1,106 @@
+.errorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: var(--bg-color);
+}
+
+.errorCard {
+  max-width: 600px;
+  width: 100%;
+  padding: 3rem;
+  background-color: var(--surface-color);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hard);
+  text-align: center;
+}
+
+.errorIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.errorTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 1rem 0;
+}
+
+.errorMessage {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.errorDetails {
+  text-align: left;
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: var(--error-bg);
+  border: 2px solid var(--error-text);
+  border-radius: var(--radius-md);
+}
+
+.errorDetails summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--error-text);
+  margin-bottom: 0.5rem;
+}
+
+.errorStack {
+  margin: 0.5rem 0 0 0;
+  padding: 1rem;
+  background-color: var(--bg-color);
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  color: var(--text-main);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.errorActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.retryButton,
+.homeButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--border-color);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.retryButton:hover,
+.homeButton:hover {
+  transform: translateY(-2px);
+}
+
+.retryButton:active,
+.homeButton:active {
+  transform: translateY(0);
+}
+
+.retryButton {
+  background-color: var(--primary-color);
+  color: var(--primary-foreground);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.homeButton {
+  background-color: var(--surface-color);
+  color: var(--text-main);
+  box-shadow: var(--shadow-hard-sm);
+}

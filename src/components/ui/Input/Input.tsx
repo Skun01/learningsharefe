@@ -1,4 +1,4 @@
-import { type InputHTMLAttributes, forwardRef } from 'react';
+import { type InputHTMLAttributes, forwardRef, memo } from 'react';
 import clsx from 'clsx';
 import styles from './Input.module.css';
 
@@ -7,7 +7,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: string;
 }
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
+export const Input = memo(forwardRef<HTMLInputElement, InputProps>(
   ({ label, error, className = '', ...props }, ref) => {
     return (
       <div className={clsx(styles.container, className)}>
@@ -28,6 +28,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       </div>
     );
   }
-);
+));
 
 Input.displayName = 'Input';

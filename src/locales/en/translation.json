@@ -5,7 +5,9 @@
     "register": "Register",
     "settings": "Settings",
     "getStarted": "Get Started",
-    "language": "Language"
+    "language": "Language",
+    "previous": "Previous",
+    "next": "Next"
   },
   "errors": {
     "Common_505": "Server error. Please try again later.",
@@ -100,5 +102,51 @@
     "themeDark": "Dark",
     "themeRetro": "Retro",
     "themeDesc": "Select a color theme for the application."
+  },
+  "nav": {
+    "home": "Home",
+    "store": "Store",
+    "settings": "Settings"
+  },
+  "store": {
+    "title": "Deck Store",
+    "subtitle": "Discover and clone public decks from the community",
+    "searchPlaceholder": "Search decks...",
+    "trending": "Trending This Week",
+    "browse": "Browse All Decks",
+    "cards": "cards",
+    "downloads": "downloads",
+    "created": "Created",
+    "preview": "Preview",
+    "clone": "Clone",
+    "cloneToLibrary": "Clone to My Library",
+    "cloning": "Cloning...",
+    "cloneHint": "This will create a private copy in your library",
+    "createdBy": "Created by",
+    "backToStore": "Back to Store",
+    "decksFound": "decks found",
+    "noDecks": "No decks found",
+    "tryAdjusting": "Try adjusting your search or filters",
+    "loadingDecks": "Loading decks...",
+    "loadingDeck": "Loading deck details...",
+    "showing": "Showing",
+    "of": "of",
+    "deckNotFound": "Deck Not Found",
+    "deckNotFoundDesc": "The deck you're looking for doesn't exist or has been removed.",
+    "errorLoadDecks": "Failed to load decks",
+    "loginToClone": "Please login to clone decks",
+    "cloneSuccess": "Deck cloned successfully!",
+    "cloneFailed": "Failed to clone deck",
+    "retry": "Try Again",
+    "clearSearch": "Clear Search",
+    "errorServerIssue": "The server is experiencing issues. Please try again later.",
+    "searching": "Searching...",
+    "found": "Found",
+    "resultsFor": "results for",
+    "noResults": "No results",
+    "searchResults": "Search Results",
+    "resultsFound": "results found",
+    "noSearchResults": "No decks found for your search",
+    "tryDifferentKeywords": "Try different keywords or browse all decks"
   }
 }

@@ -11,7 +11,6 @@ export const MainLayout = () => {
   const { t, i18n } = useTranslation();
 
 
-
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   };
@@ -31,6 +30,8 @@ export const MainLayout = () => {
                  <button 
                     className={clsx(styles.langBtn, i18n.language === 'en' && styles.activeLang)}
                     onClick={() => changeLanguage('en')}
+                    aria-label="Switch to English"
+                    aria-pressed={i18n.language === 'en'}
                  >
                    EN
                  </button>
@@ -38,6 +39,8 @@ export const MainLayout = () => {
                  <button 
                     className={clsx(styles.langBtn, i18n.language === 'vi' && styles.activeLang)}
                     onClick={() => changeLanguage('vi')}
+                    aria-label="Chuyển sang Tiếng Việt"
+                    aria-pressed={i18n.language === 'vi'}
                  >
                    VI
                  </button>

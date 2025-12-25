@@ -1,1 +1,1 @@
-// Export services here
+export { default as storeService } from './storeService';

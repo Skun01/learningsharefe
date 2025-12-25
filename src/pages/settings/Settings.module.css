@@ -321,3 +321,11 @@
 .customGoalInput {
   margin-top: 1rem;
 }
+
+.hiddenInput {
+  display: none;
+}
+
+.saveButton {
+  min-width: 120px;
+}

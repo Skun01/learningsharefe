@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.fullScreen {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-color);
+}
+
+.spinnerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  color: var(--primary-color);
+}
+
+.sm .spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.md .spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.lg .spinner {
+  width: 4rem;
+  height: 4rem;
+}
+
+.spinnerCircle {
+  opacity: 0.25;
+}
+
+.spinnerPath {
+  opacity: 0.75;
+}
+
+.text {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.sm .text {
+  font-size: 0.875rem;
+}
+
+.lg .text {
+  font-size: 1.125rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+  
+  .spinnerPath {
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.75;
+    }
+    50% {
+      opacity: 0.25;
+    }
+  }
+}

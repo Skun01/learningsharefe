@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
 import { useTheme } from '@/hooks/useTheme';
+import { useToast } from '@/hooks';
 import { userService } from '@/services/userService';
 import { Button, Switch } from '@/components/ui';
 import { getImageUrl } from '@/utils/image';
 import type { UserSettingsDTO } from '@/types';
 import { normalizeLanguageCode } from '@/utils/i18nUtils';
+import { SETTINGS } from '@/constants';
 import { DailyGoalSelector } from './DailyGoalSelector';
 import styles from './Settings.module.css';
 import clsx from 'clsx';
@@ -23,12 +25,12 @@ export const SettingsPage = () => {
   };
   const { theme, setTheme } = useTheme();
   const { t, i18n } = useTranslation();
+  const { showToast } = useToast();
   const [settings, setSettings] = useState<UserSettingsDTO | null>(user?.settings || null);
   const [loadingAction, setLoadingAction] = useState<string | null>(null);
-  const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
   
   // Daily Goal States
-  const [dailyGoalValue, setDailyGoalValue] = useState<number>(user?.settings?.dailyGoal || 10);
+  const [dailyGoalValue, setDailyGoalValue] = useState<number>(user?.settings?.dailyGoal ?? SETTINGS.DEFAULT_DAILY_GOAL);
   const [showSavedGoal, setShowSavedGoal] = useState(false);
   
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -57,12 +59,12 @@ export const SettingsPage = () => {
       setSettings(prev => prev ? { ...prev, enableGhostMode: newStatus } : null);
       
       await userService.updateGhostMode(newStatus);
-      // setMessage({ type: 'success', text: t('settings.successGhostMode', { status: newStatus ? t('settings.enabled') : t('settings.disabled') }) });
+      showToast(t('settings.successGhostMode', { status: newStatus ? t('settings.enabled') : t('settings.disabled') }), 'success');
       await refreshProfile();
     } catch {
        // Revert on failure
        setSettings(prev => prev ? { ...prev, enableGhostMode: !checked } : null);
-       setMessage({ type: 'error', text: t('settings.errorGhostMode') });
+       showToast(t('settings.errorGhostMode'), 'error');
     } finally {
       setLoadingAction(null);
     }
@@ -84,12 +86,12 @@ export const SettingsPage = () => {
       
       // Show "Saved" feedback
       setShowSavedGoal(true);
-      setTimeout(() => setShowSavedGoal(false), 2000);
+      setTimeout(() => setShowSavedGoal(false), SETTINGS.SUCCESS_MESSAGE_DURATION);
       
-      // setMessage({ type: 'success', text: t('settings.successDailyGoal') });
+      showToast(t('settings.successDailyGoal'), 'success');
       await refreshProfile();
     } catch {
-      setMessage({ type: 'error', text: t('settings.errorDailyGoal') });
+      showToast(t('settings.errorDailyGoal'), 'error');
     } finally {
       setLoadingAction(null);
     }
@@ -109,11 +111,11 @@ export const SettingsPage = () => {
       
       await userService.updateLanguage(lang);
       setSettings({ ...settings, uiLanguage: lang });
-       setMessage({ type: 'success', text: t('settings.successLanguage') });
+      showToast(t('settings.successLanguage'), 'success');
       // await refreshProfile(); // Removed to prevent race condition reverting language
     } catch {
-       setMessage({ type: 'error', text: t('settings.errorLanguage') });
-       // Revert if failed? Or just keep it.
+      showToast(t('settings.errorLanguage'), 'error');
+      // Revert if failed? Or just keep it.
     } finally {
       setLoadingAction(null);
     }
@@ -131,9 +133,9 @@ export const SettingsPage = () => {
       setLoadingAction('avatar');
       await userService.uploadAvatar(file);
       await refreshProfile(); // Refresh user context to get new avatarUrl
-      setMessage({ type: 'success', text: t('settings.successAvatar') });
+      showToast(t('settings.successAvatar'), 'success');
     } catch {
-      setMessage({ type: 'error', text: t('settings.errorAvatar') });
+      showToast(t('settings.errorAvatar'), 'error');
     } finally {
       setLoadingAction(null);
       // Clear input so same file can be selected again
@@ -146,19 +148,25 @@ export const SettingsPage = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>{t('settings.title')}</h1>
-      
-      {message && (
-        <div className={clsx(styles.message, message.type === 'success' ? styles.success : styles.error)}>
-          {message.text}
-        </div>
-      )}
 
       {/* SECTION 1: PROFILE */}
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>{t('settings.profile')}</h2>
         <div className={styles.card}>
            <div className={styles.profileRow}>
-             <div className={styles.avatarWrapper} onClick={handleAvatarClick}>
+             <div 
+               className={styles.avatarWrapper} 
+               onClick={handleAvatarClick}
+               role="button"
+               tabIndex={0}
+               aria-label={t('settings.changeAvatar')}
+               onKeyDown={(e) => {
+                 if (e.key === 'Enter' || e.key === ' ') {
+                   e.preventDefault();
+                   handleAvatarClick();
+                 }
+               }}
+             >
                 {user.avatarUrl ? (
                   <img src={getImageUrl(user.avatarUrl)} alt="Avatar" className={styles.profileAvatar} />
                 ) : (
@@ -170,7 +178,7 @@ export const SettingsPage = () => {
                type="file" 
                ref={fileInputRef} 
                onChange={handleFileChange} 
-               style={{ display: 'none' }} 
+               className={styles.hiddenInput}
                accept="image/*"
              />
              <div className={styles.profileInfo}>

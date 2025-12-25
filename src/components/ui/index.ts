@@ -1,3 +1,4 @@
 export * from './Button/Button';
 export * from './Input/Input';
 export * from './Switch/Switch';
+export { Loading } from './Loading/Loading';

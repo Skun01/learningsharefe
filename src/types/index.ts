@@ -76,3 +76,6 @@ export interface UpdateDailyGoalRequest {
 export interface UpdateLanguageRequest {
   language: string;
 }
+
+// Store types
+export * from './store';

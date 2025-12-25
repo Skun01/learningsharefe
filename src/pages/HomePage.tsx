@@ -31,7 +31,7 @@ export const HomePage = () => {
            <h2 className={styles.welcomeTitle}>{t('home.welcomeBack', { username: user.username })}</h2>
            <p className={styles.welcomeText}>{t('home.readyToContinue')}</p>
            <div className={styles.progressCard}>
-              {t('home.dailyGoalProgress', { current: 0, total: user.settings.dailyGoal })}
+              {t('home.dailyGoalProgress', { current: 0, total: user.settings?.dailyGoal ?? 10 })}
            </div>
         </div>
       )}

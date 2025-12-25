@@ -5,7 +5,9 @@
     "register": "Đăng ký",
     "settings": "Cài đặt",
     "getStarted": "Bắt đầu ngay",
-    "language": "Ngôn ngữ"
+    "language": "Ngôn ngữ",
+    "previous": "Trang trước",
+    "next": "Trang sau"
   },
   "errors": {
     "Common_505": "Lỗi máy chủ. Vui lòng thử lại sau.",
@@ -100,5 +102,51 @@
     "themeDark": "Tối",
     "themeRetro": "Cổ điển",
     "themeDesc": "Chọn màu sắc chủ đề cho ứng dụng."
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "store": "Cửa hàng",
+    "settings": "Cài đặt"
+  },
+  "store": {
+    "title": "Cửa Hàng Bộ Deck",
+    "subtitle": "Khám phá và sao chép các bộ deck công khai từ cộng đồng",
+    "searchPlaceholder": "Tìm kiếm deck...",
+    "trending": "Thịnh hành tuần này",
+    "browse": "Xem tất cả",
+    "cards": "thẻ",
+    "downloads": "lượt tải",
+    "created": "Tạo ngày",
+    "preview": "Xem trước",
+    "clone": "Sao chép",
+    "cloneToLibrary": "Sao chép vào thư viện",
+    "cloning": "Đang sao chép...",
+    "cloneHint": "Tạo bản sao riêng trong thư viện của bạn",
+    "createdBy": "Tạo bởi",
+    "backToStore": "Quay lại Cửa hàng",
+    "decksFound": "deck tìm thấy",
+    "noDecks": "Không tìm thấy deck nào",
+    "tryAdjusting": "Thử điều chỉnh tìm kiếm hoặc bộ lọc",
+    "loadingDecks": "Đang tải deck...",
+    "loadingDeck": "Đang tải chi tiết...",
+    "showing": "Hiển thị",
+    "of": "trong tổng số",
+    "deckNotFound": "Không tìm thấy Deck",
+    "deckNotFoundDesc": "Deck bạn tìm không tồn tại hoặc đã bị xóa.",
+    "errorLoadDecks": "Không thể tải deck",
+    "loginToClone": "Vui lòng đăng nhập để sao chép deck",
+    "cloneSuccess": "Đã sao chép deck thành công!",
+    "cloneFailed": "Không thể sao chép deck",
+    "retry": "Thử lại",
+    "clearSearch": "Xóa tìm kiếm",
+    "errorServerIssue": "Máy chủ đang gặp sự cố. Vui lòng thử lại sau.",
+    "searching": "Đang tìm kiếm...",
+    "found": "Tìm thấy",
+    "resultsFor": "kết quả cho",
+    "noResults": "Không có kết quả",
+    "searchResults": "Kết quả tìm kiếm",
+    "resultsFound": "kết quả",
+    "noSearchResults": "Không tìm thấy deck nào",
+    "tryDifferentKeywords": "Thử từ khóa khác hoặc xem tất cả deck"
   }
 }

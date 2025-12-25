@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 import clsx from 'clsx';
 import styles from './Switch.module.css';
 
@@ -10,13 +10,13 @@ interface SwitchProps {
   id?: string;
 }
 
-export const Switch: React.FC<SwitchProps> = ({
+export const Switch = memo(({
   checked,
   onCheckedChange,
   disabled = false,
   className,
   id,
-}) => {
+}: SwitchProps) => {
   return (
     <button
       type="button"
@@ -35,4 +35,6 @@ export const Switch: React.FC<SwitchProps> = ({
       <span className={styles.switchThumb} />
     </button>
   );
-};
+});
+
+Switch.displayName = 'Switch';
