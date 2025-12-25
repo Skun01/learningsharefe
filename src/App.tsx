@@ -12,9 +12,14 @@ const RegisterPage = lazy(() => import('@/pages').then(m => ({ default: m.Regist
 const ForgotPasswordPage = lazy(() => import('@/pages').then(m => ({ default: m.ForgotPasswordPage })));
 const ResetPasswordPage = lazy(() => import('@/pages').then(m => ({ default: m.ResetPasswordPage })));
 const SettingsPage = lazy(() => import('@/pages').then(m => ({ default: m.SettingsPage })));
+// Dashboard
+const DashboardPage = lazy(() => import('@/pages/DashboardPage').then(m => ({ default: m.DashboardPage })));
 // Store pages
 const StorePage = lazy(() => import('@/pages').then(m => ({ default: m.StorePage })));
-const DeckDetailPage = lazy(() => import('@/pages').then(m => ({ default: m.DeckDetailPage })));
+// Deck pages  
+const DecksPage = lazy(() => import('@/pages/DecksPage').then(m => ({ default: m.DecksPage })));
+// Error pages
+const NotFoundPage = lazy(() => import('@/pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated, isLoading } = useAuth();
@@ -30,7 +35,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 
-// Redirect authenticated users to Store
+// Redirect authenticated users to Dashboard
 const HomeRedirect = () => {
   const { isAuthenticated, isLoading } = useAuth();
 
@@ -39,7 +44,7 @@ const HomeRedirect = () => {
   }
 
   if (isAuthenticated) {
-    return <Navigate to="/store" replace />;
+    return <Navigate to="/dashboard" replace />;
   }
 
   return <HomePage />;
@@ -54,6 +59,13 @@ const AppRoutes = () => {
             <HomeRedirect />
           </Suspense>
         } />
+        <Route path="/dashboard" element={
+          <Suspense fallback={<Loading fullScreen />}>
+            <ProtectedRoute>
+              <DashboardPage />
+            </ProtectedRoute>
+          </Suspense>
+        } />
         <Route path="/settings" element={
           <Suspense fallback={<Loading fullScreen />}>
             <ProtectedRoute>
@@ -66,9 +78,17 @@ const AppRoutes = () => {
             <StorePage />
           </Suspense>
         } />
-        <Route path="/store/:id" element={
+        <Route path="/decks" element={
           <Suspense fallback={<Loading fullScreen />}>
-            <DeckDetailPage />
+            <ProtectedRoute>
+              <DecksPage />
+            </ProtectedRoute>
+          </Suspense>
+        } />
+        {/* 404 Catch-all */}
+        <Route path="*" element={
+          <Suspense fallback={<Loading fullScreen />}>
+            <NotFoundPage />
           </Suspense>
         } />
       </Route>

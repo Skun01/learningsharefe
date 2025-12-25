@@ -91,19 +91,30 @@
 }
 
 .navLink {
-  color: var(--text-main);
+  color: var(--text-muted);
   font-size: 0.875rem;
-  font-weight: 700;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
 }
 
 .navLink:hover {
-  text-decoration: underline;
+  color: var(--text-main);
+  background-color: var(--surface-color);
+}
+
+.activeNavLink {
+  color: var(--primary-color);
+  background-color: var(--primary-bg, rgba(59, 130, 246, 0.1));
+  font-weight: 700;
 }
 
 .userControls {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .userSection {

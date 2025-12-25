@@ -79,3 +79,6 @@ export interface UpdateLanguageRequest {
 
 // Store types
 export * from './store';
+
+// Deck types
+export * from './deck';

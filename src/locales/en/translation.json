@@ -7,7 +7,14 @@
     "getStarted": "Get Started",
     "language": "Language",
     "previous": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "viewAll": "View All"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "decks": "Decks",
+    "store": "Store",
+    "settings": "Settings"
   },
   "errors": {
     "Common_505": "Server error. Please try again later.",
@@ -103,11 +110,6 @@
     "themeRetro": "Retro",
     "themeDesc": "Select a color theme for the application."
   },
-  "nav": {
-    "home": "Home",
-    "store": "Store",
-    "settings": "Settings"
-  },
   "store": {
     "title": "Deck Store",
     "subtitle": "Discover and clone public decks from the community",
@@ -148,5 +150,59 @@
     "resultsFound": "results found",
     "noSearchResults": "No decks found for your search",
     "tryDifferentKeywords": "Try different keywords or browse all decks"
+  },
+  "decks": {
+    "dashboard": "My Deck Dashboard",
+    "dashboardSubtitle": "Track your learning progress",
+    "totalDecks": "Total Decks",
+    "totalCards": "Total Cards",
+    "totalLearned": "Learned",
+    "totalDue": "Due Today",
+    "overallProgress": "Overall Progress",
+    "completed": "Completed",
+    "publicDecks": "Public Decks",
+    "privateDecks": "Private Decks",
+    "byType": "Decks by Type",
+    "errorLoadStats": "Failed to load statistics",
+    "loadingStats": "Loading statistics...",
+    "myDecks": "My Decks",
+    "newDeck": "New Deck",
+    "grammar": "Grammar",
+    "vocabulary": "Vocabulary",
+    "allDecks": "All Decks",
+    "myDecksOnly": "My Decks",
+    "sortCardsDue": "Cards Due",
+    "sortName": "Name",
+    "sortProgress": "Progress",
+    "sortCreatedAt": "Created Date",
+    "decksFound": "decks",
+    "loadingDecks": "Loading decks...",
+    "errorLoadDecks": "Failed to load decks",
+    "retry": "Retry",
+    "emptyGrammar": "No grammar decks yet",
+    "emptyVocabulary": "No vocabulary decks yet",
+    "createFirst": "Create your first deck to get started",
+    "due": "due",
+    "cards": "cards",
+    "learned": "learned",
+    "public": "Public",
+    "private": "Private",
+    "study": "Study",
+    "edit": "Edit"
+  },
+  "dashboard": {
+    "welcome": "Welcome Back!",
+    "subtitle": "Track your progress and discover new content",
+    "loading": "Loading dashboard...",
+    "myDecks": "My Decks",
+    "trendingStore": "Trending from Store",
+    "exploreStore": "Explore Store",
+    "viewAllDecks": "View All My Decks"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "goHome": "Go to Homepage",
+    "goBack": "Go Back"
   }
 }

@@ -7,7 +7,14 @@
     "getStarted": "Bắt đầu ngay",
     "language": "Ngôn ngữ",
     "previous": "Trang trước",
-    "next": "Trang sau"
+    "next": "Trang sau",
+    "viewAll": "Xem tất cả"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "decks": "Decks",
+    "store": "Cửa hàng",
+    "settings": "Cài đặt"
   },
   "errors": {
     "Common_505": "Lỗi máy chủ. Vui lòng thử lại sau.",
@@ -103,11 +110,6 @@
     "themeRetro": "Cổ điển",
     "themeDesc": "Chọn màu sắc chủ đề cho ứng dụng."
   },
-  "nav": {
-    "home": "Trang chủ",
-    "store": "Cửa hàng",
-    "settings": "Cài đặt"
-  },
   "store": {
     "title": "Cửa Hàng Bộ Deck",
     "subtitle": "Khám phá và sao chép các bộ deck công khai từ cộng đồng",
@@ -148,5 +150,59 @@
     "resultsFound": "kết quả",
     "noSearchResults": "Không tìm thấy deck nào",
     "tryDifferentKeywords": "Thử từ khóa khác hoặc xem tất cả deck"
+  },
+  "decks": {
+    "dashboard": "Bảng điều khiển Deck",
+    "dashboardSubtitle": "Theo dõi tiến độ học tập của bạn",
+    "totalDecks": "Tổng số Deck",
+    "totalCards": "Tổng số thẻ",
+    "totalLearned": "Đã học",
+    "totalDue": "Cần ôn hôm nay",
+    "overallProgress": "Tiến độ tổng thể",
+    "completed": "Hoàn thành",
+    "publicDecks": "Deck công khai",
+    "privateDecks": "Deck riêng tư",
+    "byType": "Deck theo loại",
+    "errorLoadStats": "Không thể tải thống kê",
+    "loadingStats": "Đang tải thống kê...",
+    "myDecks": "Deck của tôi",
+    "newDeck": "Tạo Deck",
+    "grammar": "Ngữ pháp",
+    "vocabulary": "Từ vựng",
+    "allDecks": "Tất cả Deck",
+    "myDecksOnly": "Deck của tôi",
+    "sortCardsDue": "Cần ôn",
+    "sortName": "Tên",
+    "sortProgress": "Tiến độ",
+    "sortCreatedAt": "Ngày tạo",
+    "decksFound": "deck",
+    "loadingDecks": "Đang tải deck...",
+    "errorLoadDecks": "Không thể tải deck",
+    "retry": "Thử lại",
+    "emptyGrammar": "Chưa có deck ngữ pháp",
+    "emptyVocabulary": "Chưa có deck từ vựng",
+    "createFirst": "Tạo deck đầu tiên để bắt đầu",
+    "due": "cần ôn",
+    "cards": "thẻ",
+    "learned": "đã học",
+    "public": "Công khai",
+    "private": "Riêng tư",
+    "study": "Học",
+    "edit": "Sửa"
+  },
+  "dashboard": {
+    "welcome": "Chào mừng trở lại!",
+    "subtitle": "Theo dõi tiến độ và khám phá nội dung mới",
+    "loading": "Đang tải bảng điều khiển...",
+    "myDecks": "Deck của tôi",
+    "trendingStore": "Xu hướng từ Cửa hàng",
+    "exploreStore": "Khám phá Cửa hàng",
+    "viewAllDecks": "Xem tất cả Deck của tôi"
+  },
+  "notFound": {
+    "title": "Không tìm thấy trang",
+    "description": "Trang bạn đang tìm không tồn tại hoặc đã được di chuyển.",
+    "goHome": "Về trang chủ",
+    "goBack": "Quay lại"
   }
 }
